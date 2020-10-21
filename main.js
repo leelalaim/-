@@ -80,7 +80,7 @@ const updatePost = url => {
     inputUserIdUpdate = document.getElementById('userId').value,
     inputIdPostUpdate = document.getElementById('idPostUpdate').value;
 
-    fetch(url, {
+    fetch(url + '/' + inputIdPostUpdate, {
         method: 'PUT',
         body: JSON.stringify({
             id: inputIdPostUpdate,
@@ -98,6 +98,6 @@ const updatePost = url => {
 
 btnUpdate.addEventListener('click', e => {
     e.preventDefault();
-    updatePost(requestUrl + '/1');
+    updatePost(requestUrl);
 })
 
